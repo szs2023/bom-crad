@@ -14,7 +14,7 @@ const displayTodoList = () => {
   todoContainer.forEach((todo, index) => {
     todoTemp += `<tr data-id ="${todo.taskID}">
                 <td>${todo.taskName}</td>
-                <td><button class="btn btn-primary text-black" onclick="savecancel()">Edit</button></td>
+                <td><button class="btn btn-primary text-black" onclick="savetodo()()">Edit</button></td>
                 <td><button class="btn btn-danger btn-sm " onclick="deletTodo(${index})">Delete</button></td>
                 <td><span>${date.getDate()} Aug ,${date.getFullYear()}</span></td>
             </tr>`;
@@ -50,7 +50,7 @@ function deletTodo(index) {
   displayTodoList();
   saveDataToLocalStorage("todoListStorage", JSON.stringify(todoContainer));
 }
-const savetodo = () => {
+function savetodo(){
   let todoTemp = "";
   todoContainer.forEach((todo, index) => {
     todoTemp += `<tr data-id ="${todo.taskID}">
@@ -62,4 +62,4 @@ const savetodo = () => {
   });
   document.getElementById("showTodo").innerHTML = todoTemp;
 };
-editandsave.addEventListener("click",savetodo())
+
